@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="snack_bot" model="snack.bot">
+            <field name="name">Lunch Discord Bot</field>
+        </record>
+    </data>
+</odoo>

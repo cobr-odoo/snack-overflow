@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lunch_week_user,lunch.week,model_lunch_week,base.group_user,1,1,1,1
+access_lunch_week_line_user,lunch.week.line,model_lunch_week_line,base.group_user,1,1,1,1
+access_lunch_allergen,lunch.allergen,model_lunch_allergen,base.group_user,1,1,1,1
+access_snack_bot,snack.bot,model_snack_bot,base.group_user,1,1,1,1

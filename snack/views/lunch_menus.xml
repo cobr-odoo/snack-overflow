@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_view_lunch_week" model="ir.actions.act_window">
+        <field name="name">Lunch Menus</field>
+        <field name="res_model">lunch.week</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create some menus for people to eat lunch
+            </p><p>
+                Lunch menus can be created for people to RSVP
+            </p>
+        </field>
+    </record>
+
+    <record id="action_view_snack_bot" model="ir.actions.act_window">
+        <field name="name">Discord Bot</field>
+        <field name="res_model">snack.bot</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Did you delete the default discord bot? For shame...
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="lunch_menu_root"
+        name="Lunch"
+        web_icon="snack,static/description/icon.png"
+        sequence="30">
+
+        <menuitem id="lunch_week_menu"
+            name="Lunch Menus"
+            action="action_view_lunch_week"
+            sequence="10">
+        </menuitem>
+
+        <menuitem id="snack_bot_menu"
+            name="Discord Bot Config"
+            action="action_view_snack_bot"
+            sequence="20">
+        </menuitem>
+    </menuitem>
+
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_snack_bot_list" model="ir.ui.view">
+        <field name="name">snack.bot.list</field>
+        <field name="model">snack.bot</field>
+        <field name="arch" type="xml">
+            <list string="Snack Bots" create="false" delete="false">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_snack_bot_form" model="ir.ui.view">
+        <field name="name">snack.bot.form</field>
+        <field name="model">snack.bot</field>
+        <field name="arch" type="xml">
+            <form string="Snack Bot">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="client_token"/>
+                        <field name="client_secret"/>
+                        <field name="server_id"/>
+                        <field name="channel_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

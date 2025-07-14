@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lunch_week_form" model="ir.ui.view">
+        <field name="name">lunch.week.form</field>
+        <field name="model">lunch.week</field>
+        <field name="arch" type="xml">
+            <form string="Lunch Week">
+                <header>
+                    <button name="create_poll"
+                            type="object"
+                            string="Create Poll"
+                            class="btn-primary"
+                            invisible="poll_id"/>
+                    <button name="read_poll_results"
+                            type="object"
+                            string="Read Poll Results"
+                            class="btn-primary"
+                            invisible="not poll_id"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="soup_information"/>
+                        <field name="week_start_date" interval="day"/>
+                        <field name="week_end_date" interval="day"/>
+                        <field name="survey_length"/>
+                        <field name="week_line_ids" widget="one2many_list">
+                            <list>
+                                <field name="emoji"/>
+                                <field name="weekday"/>
+                                <field name="entree_name"/>
+                                <field name="respondents"/>
+                                <field name="vegan_count"/>
+                                <field name="non_vegan_count"/>
+                                <field name="total_made" optional="hidden"/>
+                                <field name="entree_description" optional="hidden"/>
+                                <field name="allergen_ids" widget="many2many_tags" optional="hidden"/>
+                                <field name="alternatives" optional="hidden"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+        
+    <record id="lunch_week_tree" model="ir.ui.view">
+        <field name="name">lunch.week.list</field>
+        <field name="model">lunch.week</field>
+        <field name="arch" type="xml">
+            <list string="Lunch Week">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lunch_week_line_form" model="ir.ui.view">
+        <field name="name">lunch.week.line.form</field>
+        <field name="model">lunch.week.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet string="Lunch Week Lines">
+                    <group>
+                        <group>
+                            <field name="weekday"/>
+                            <field name="entree_name"/>
+                            <field name="emoji"/>
+                        </group>
+                        <group>
+                            <field name="week_id" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <field name="entree_description"/>
+                    </group>
+                    <group>
+                        <field name="allergen_ids" can_create="True" can_write="True" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="alternatives"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="respondents" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="total_made"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
